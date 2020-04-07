@@ -15,3 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::apiResource("movies","MoviesController");
+Route::get('movies/delete/{id}','MovieController@delete')->name('deleteMovies');
+Route::post('movies/{id}','MovieController@edit')->name('editMovies');

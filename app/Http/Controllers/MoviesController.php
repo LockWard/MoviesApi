@@ -58,8 +58,11 @@ class MoviesController extends Controller
      * @param  \App\Movies  $movies
      * @return \Illuminate\Http\Response
      */
-    public function edit(Movies $movies)
+    public function edit($id, Request $request)
     {
+        $movies= $this->get($id);
+        $movies->fill($request->all())->save();
+        return $movies;
 
     }
 
@@ -89,4 +92,12 @@ class MoviesController extends Controller
         return response()->json();
         //
     }
+     public function delete($id, Request $request)
+    {
+        $movies= $this->get($id);
+        $movies->delete();
+        return $movies;
+
+    }
+
 }
