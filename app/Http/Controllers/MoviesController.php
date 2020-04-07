@@ -14,8 +14,8 @@ class MoviesController extends Controller
      */
     public function index()
     {
-        $movies= Movies::all();
-        return $movies;
+        $movie= Movies::all();
+        return $movie;
 
     }
 
@@ -37,8 +37,8 @@ class MoviesController extends Controller
      */
     public function store(Request $request)
     {
-        $movies = Movies::create($request->all());
-        return $movies;
+        $movie = Movies::create($request->all());
+        return $movie;
     }
 
     /**
@@ -47,7 +47,7 @@ class MoviesController extends Controller
      * @param  \App\Movies  $movies
      * @return \Illuminate\Http\Response
      */
-    public function show(Movies $movies)
+    public function show(Movies $movie)
     {
         //
     }
@@ -73,9 +73,9 @@ class MoviesController extends Controller
      * @param  \App\Movies  $movies
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Movies $movies)
+    public function update(Request $request, Movies $movie)
     {
-        $movies->update($request->all());
+        $movie->update($request->all());
         return response()->json();
         //
     }
@@ -86,18 +86,18 @@ class MoviesController extends Controller
      * @param  \App\Movies  $movies
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Movies $movies)
+    public function destroy(Movies $movie)
     {
-        $movies->delete();
+        $movie->delete();
         return response()->json();
         //
     }
-     public function delete($id, Request $request)
+    /* public function delete($id, Request $request)
     {
         $movies= $this->get($id);
         $movies->delete();
         return $movies;
 
-    }
+    }*/
 
 }
