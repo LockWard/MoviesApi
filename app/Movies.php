@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Movies extends Model
 {
-    protected $fillable =["Titulo","Poster","Trailer,RelaseYear,Director"];
+    protected $fillable =["Titulo","Poster","Trailer","RelaseYear","Director"];
 }
